@@ -1,0 +1,19 @@
+# Docker Jenkins Setup
+
+## Build the Docker Image
+
+To build the Docker image, use the following command:
+
+```bash
+docker build -t jenkins/<BUILD_NAME> .
+
+#Example
+```bash
+docker build -t jenkins/jenkinsdind .
+
+
+
+# Run the Docker container
+docker run -d -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/<BUILD_NAME>
+#for example:
+docker run -d -p 8080:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkinsdind
