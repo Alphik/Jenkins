@@ -1,12 +1,18 @@
 pipeline {
     agent {
-        docker {
-            image 'ubuntu:plucky'
-        }
+        any
+        // docker {
+        //     image 'ubuntu:plucky'
+        // }
     }
     stages {
         stage("A") {
+
             steps {
+                
+            withDockerContainer('ubuntu:plucky') {
+                sh 'whoami'
+            }
                 echo "========executing A========"
             }
         }
