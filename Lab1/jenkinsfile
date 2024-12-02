@@ -24,7 +24,6 @@ pipeline{
                 }
             }
         }
-    }
 
         stage('Create Dynamic Variables') {
             steps {
@@ -41,6 +40,7 @@ pipeline{
                 echo "$DYNAMIC_VAR"
             }
         }
+    }
 
     post{
         always{
