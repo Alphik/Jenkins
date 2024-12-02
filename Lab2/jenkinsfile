@@ -1,13 +1,11 @@
 pipeline{
-    agent{
-        docker{
-            image 'ubuntu:plucky'
-        } 
-    }
-    stages{
-        stage("A"){
-            steps{
-                echo "========executing A========"
+
+    dockerNode('ubuntu:plucky') {
+        stages{
+            stage("A"){
+                steps{
+                    echo "========executing A========"
+                }
             }
         }
     }
