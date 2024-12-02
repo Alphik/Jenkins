@@ -25,6 +25,23 @@ pipeline{
             }
         }
     }
+
+        stage('Create Dynamic Variables') {
+            steps {
+                script {
+                    env.DYNAMIC_VAR = "DynamicValue_${BUILD_NUMBER}"
+                }
+            }
+        }
+
+
+        stage('print Dynamic Variables') {
+            steps {
+            
+                echo "$DYNAMIC_VAR"
+            }
+        }
+
     post{
         always{
             echo "========always========"
