@@ -44,7 +44,7 @@ pipeline{
 
         stage('3.Custom Scoped Environment') {
             environment {
-                STAGE_VAR = 'stage_value'
+                STAGE_VAR = 'stage_value_nvironment'
             }
             steps {
             
