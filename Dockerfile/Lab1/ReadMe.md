@@ -1,4 +1,4 @@
-# Lab 1
+## Lab 1
 Environment Setup and Custom Environments
 Objective: Learn how to define and use environments in Jenkins pipelines.
 
