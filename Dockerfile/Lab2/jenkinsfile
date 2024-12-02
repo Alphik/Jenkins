@@ -1,7 +1,13 @@
+
 pipeline{
-    agent{
-        label any
+    agent any
+    environment{
+        REPO_NAME = "RRSasASD"
+        REURL = "http://github.com"
+        GITUSER = "alphik"
+
     }
+
     stages{
         stage("A"){
             steps{
@@ -20,6 +26,25 @@ pipeline{
             }
         }
     }
+
+        stage("B"){
+            steps{
+                echo "========executing A========"
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+    }
+
     post{
         always{
             echo "========always========"
